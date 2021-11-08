@@ -1,12 +1,5 @@
-abstract class SignUpRepository {}
+import 'package:movil181/app/domain/use_cases/sing_up.dart';
 
-class SingUpData {
-  final String name, lastname, email, password;
-
-  SingUpData({
-    required this.name,
-    required this.lastname,
-    required this.email,
-    required this.password,
-  });
+abstract class SignUpRepository {
+  Future<SingUpResponse> register(SingUpData data);
 }
