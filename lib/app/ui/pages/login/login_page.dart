@@ -14,9 +14,7 @@ class LoginPage extends StatelessWidget {
         child: Column(
           children: [
             ElevatedButton(
-              onPressed: () => router.pushNamed(
-                Routes.REGISTER,
-              ),
+              onPressed: () => router.pushNamed(Routes.REGISTER),
               child: const Text("sign up"),
             )
           ],

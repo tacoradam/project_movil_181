@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movil181/app/ui/common/atoms/atoms_common.dart';
+import 'package:movil181/app/ui/common/molecules/molecules_common.dart';
+import 'package:movil181/app/ui/common/organisms/organisms_common.dart';
+import 'package:flutter_meedu/router.dart' as router;
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -8,17 +11,28 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
-        body: Column(
+        body: ListView(
+            children: [
+              OrganismsCommon().bodyRegister(),
+            ],
+          ),
+        );
+        
+        /*ListView(
+          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
           children: <Widget>[
             Center(
-              child: const Text("pagina de registro"),
+              child: AtomsCommon()
+                .textRegular("pagina de registro"),
             ),
-            const AtomsCommon().circleAvatar(),
-            const AtomsCommon()
-                .textTitle('Mi tienda movil 181'),
-            const AtomsCommon()
-                .textRegular('Ad officia incididunt anim mollit duis eu eu aute reprehenderit laborum mollit. Aliquip magna esse qui voluptate eiusmod tempor incididunt et incididunt exercitation eiusmod.'),
+            Divider(),
+            AtomsCommon().circleAvatar(),
+            AtomsCommon()
+              .textTitle('Mi tienda movil 181'),
+            Divider(),
+
+            MoleculesCommon().form(),
           ],
-        ));
+        )*/
   }
 }
