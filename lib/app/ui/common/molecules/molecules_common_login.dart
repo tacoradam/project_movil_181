@@ -15,9 +15,9 @@ class MoleculesCommonLogin extends StatelessWidget {
     return Column(
       children: <Widget>[
         AtomsCommon().logo(),
-        AtomsCommon().textTitle('Mi barrio store'),
+        AtomsCommon().textTitleRegister('Mi Barrio Store'),
         SizedBox(height: 20),
-        AtomsCommon().textTitle('Login')
+        AtomsCommon().textTitleRegister('Login')
       ],
     );
   }
@@ -44,10 +44,10 @@ class MoleculesCommonLogin extends StatelessWidget {
         AtomsCommonLogin()
             .textButton('¿Olvido su contraseña?', Routes.REGISTER),
         AtomsCommonLogin().buttonLogin(
-            "assets/google_logo.png", 'Aceder con google', Routes.REGISTER),
+            "assets/google_logo.png", 'Acceder con google', Routes.REGISTER),
         AtomsCommonLogin().buttonLogin(
-            'assets/facebook.png', 'Aceder con facebook', Routes.REGISTER),
-        AtomsCommonLogin().textButton('Registrase', Routes.REGISTER),
+            'assets/facebook.png', 'Acceder con facebook', Routes.REGISTER),
+        AtomsCommonLogin().textButton('Registrarse', Routes.REGISTER),
       ],
     );
   }
