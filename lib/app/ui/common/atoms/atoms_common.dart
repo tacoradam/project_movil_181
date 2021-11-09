@@ -17,8 +17,8 @@ class AtomsCommon extends StatelessWidget {
     'lock': Icons.lock,
     'visibility': Icons.visibility,
     'visibilityOff': Icons.visibility_off,
-    //'add_alert'     : Icons.add_alert,
-    //'folder_open'   : Icons.folder_open,
+    'notifications': Icons.notifications,
+    'favorite': Icons.favorite_rounded,
     //'donut_large'   : Icons.donut_large,
     //'inputs'        : Icons.input,
     //'tune'          : Icons.tune,
@@ -46,13 +46,40 @@ class AtomsCommon extends StatelessWidget {
     );
   }
 
-  Widget textTitle(String text) {
+  Widget textTitleRegister(String text) {
     return Text(
       text,
+      textAlign: TextAlign.start,
       style: TextStyle(
         //fontWeight: FontWeight.bold,
         fontFamily: 'Monserrat',
         fontSize: 28,
+        color: Colors.teal[800],
+      ),
+    );
+  }
+
+  Widget textTitle(String text) {
+    return Text(
+      text,
+      textAlign: TextAlign.start,
+      style: TextStyle(
+        //fontWeight: FontWeight.bold,
+        fontFamily: 'Monserrat',
+        fontSize: 22,
+        color: Colors.teal[800],
+      ),
+    );
+  }
+
+  Widget textSubtitle(String text) {
+    return Text(
+      text,
+      textAlign: TextAlign.start,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Monserrat',
+        fontSize: 18,
         color: Colors.teal[800],
       ),
     );
@@ -92,12 +119,19 @@ class AtomsCommon extends StatelessWidget {
         onPressed: () => router.pushNamed(page),
         child: Text(texto),
         style: ElevatedButton.styleFrom(
-            elevation: 10.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0)),
             padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
             textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       ),
     );
+  }
+
+  Widget buttomAppbBar(String icon) {
+    return Container(
+        child: IconButton(
+      onPressed: () {},
+      icon: getIcon(icon),
+    ));
   }
 }
