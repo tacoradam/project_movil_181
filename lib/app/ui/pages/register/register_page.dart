@@ -15,7 +15,9 @@ class RegisterPage extends StatelessWidget {
             ),
             const AtomsCommon().circleAvatar(),
             const AtomsCommon()
-                .textTitle('Mi tienda movil 181', 'FjallaOne', 30.0),
+                .textTitle('Mi tienda movil 181'),
+            const AtomsCommon()
+                .textRegular('Ad officia incididunt anim mollit duis eu eu aute reprehenderit laborum mollit. Aliquip magna esse qui voluptate eiusmod tempor incididunt et incididunt exercitation eiusmod.'),
           ],
         ));
   }
