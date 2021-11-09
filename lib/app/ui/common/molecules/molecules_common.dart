@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:movil181/app/ui/common/atoms/atoms_common.dart';
 import 'package:flutter_meedu/router.dart' as router;
 import 'package:movil181/app/ui/routes/routes.dart';
@@ -16,7 +17,7 @@ class MoleculesCommon extends StatelessWidget {
         child: Column(
       children: <Widget>[
         AtomsCommon().textFieldRegistro(
-            true, false, 'Email', 'Email', 'email', 'alternateEmail'),
+            false, false, 'Email', 'Email', 'email', 'alternateEmail'),
         SizedBox(height: 20),
         AtomsCommon().textFieldRegistro(false, false, 'Nombre de la persona',
             'Nombre', 'accessibility', 'acountCircle'),
@@ -52,6 +53,25 @@ class MoleculesCommon extends StatelessWidget {
         //AtomsCommon().buttomAppbBar('notifications'),
         AtomsCommon().buttomAppbBar('favorite'),
         AtomsCommon().buttomAppbBar('notifications'),
+      ],
+    );
+  }
+
+  Widget bottomNavigation() {
+    return FloatingNavbar(
+      backgroundColor: Colors.black87,
+      borderRadius: 20,
+      itemBorderRadius: 20,
+      onTap: (int val) {
+        //returns tab id which is user tapped
+      },
+      currentIndex: 0,
+      items: [
+        FloatingNavbarItem(icon: Icons.home, title: 'Inicio'),
+        FloatingNavbarItem(icon: Icons.search, title: 'Buscar'),
+        FloatingNavbarItem(icon: Icons.shopping_cart_outlined, title: 'Pedido'),
+        FloatingNavbarItem(icon: Icons.list_alt, title: 'Notas'),
+        FloatingNavbarItem(icon: Icons.account_circle, title: 'Cuenta'),
       ],
     );
   }

@@ -15,7 +15,6 @@ class MoleculesCommonLogin extends StatelessWidget {
     return Column(
       children: <Widget>[
         AtomsCommon().logo(),
-        AtomsCommon().textTitleRegister('Mi Barrio Store'),
         SizedBox(height: 20),
         AtomsCommon().textTitleRegister('Login')
       ],
@@ -27,7 +26,7 @@ class MoleculesCommonLogin extends StatelessWidget {
       child: Column(
         children: <Widget>[
           AtomsCommon().textFieldRegistro(
-              true, false, 'Email', 'Email', 'email', 'alternateEmail'),
+              false, false, 'Email', 'Email', 'email', 'alternateEmail'),
           SizedBox(height: 12),
           AtomsCommon().textFieldRegistro(
               false, true, 'Contraseña', 'Contraseña', 'visibilityOff', 'lock'),
