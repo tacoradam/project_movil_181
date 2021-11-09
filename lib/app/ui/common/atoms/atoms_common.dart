@@ -62,7 +62,7 @@ class AtomsCommon extends StatelessWidget {
   Widget textRegular(String text) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontFamily: 'PTSans',
         fontSize: 18.0,
       ),
