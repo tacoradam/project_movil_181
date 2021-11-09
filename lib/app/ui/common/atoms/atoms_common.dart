@@ -16,13 +16,25 @@ class AtomsCommon extends StatelessWidget {
     );
   }
 
-  Widget textTitle(String text, String font, double fontSize) {
+  Widget textTitle(String text) {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: font,
-        fontSize: fontSize,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Roboto',
+        fontSize: 25,
       ),
     );
   }
+
+  Widget textRegular(String text) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontFamily: 'PTSans',
+        fontSize: 18.0,
+      ),
+    );
+  }
+  
 }

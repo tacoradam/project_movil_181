@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+      ),
       title: 'APP movil 181',
       navigatorKey: router.navigatorKey,
       debugShowCheckedModeBanner: false,
