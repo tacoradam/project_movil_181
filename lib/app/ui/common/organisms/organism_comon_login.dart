@@ -18,7 +18,7 @@ class OrganismCommonLogin extends StatelessWidget {
           MoleculesCommonLogin().headerLogin(),
           SizedBox(height: 30),
           MoleculesCommonLogin().formLogin(),
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           MoleculesCommonLogin().footerLogin()
         ],
       ),

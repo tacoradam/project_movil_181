@@ -45,12 +45,12 @@ class AtomsCommonLogin extends StatelessWidget {
                 height: 30.0,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.only(left: 30.0),
                 child: Text(
                   text,
                   style: TextStyle(
                     fontFamily: 'Monserrat',
-                    fontSize: 19,
+                    fontSize: 17,
                     color: Colors.teal,
                     fontWeight: FontWeight.w500,
                     backgroundColor: Colors.transparent,

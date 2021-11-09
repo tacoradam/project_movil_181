@@ -28,10 +28,10 @@ class MoleculesCommonLogin extends StatelessWidget {
         children: <Widget>[
           AtomsCommon().textFieldRegistro(
               true, false, 'Email', 'Email', 'email', 'alternateEmail'),
-          SizedBox(height: 10),
+          SizedBox(height: 12),
           AtomsCommon().textFieldRegistro(
               false, true, 'Contraseña', 'Contraseña', 'visibilityOff', 'lock'),
-          SizedBox(height: 20),
+          SizedBox(height: 25),
           AtomsCommon().buttomSend('Confirmar', Routes.REGISTER),
         ],
       ),
