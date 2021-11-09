@@ -9,7 +9,7 @@ class AtomsCommon extends StatelessWidget {
   }
 
   Widget circleAvatar() {
-    return CircleAvatar(
+    return const CircleAvatar(
       radius: 30.0,
       backgroundColor: Colors.white10,
       backgroundImage: AssetImage('assets/logo2.png'),
@@ -19,7 +19,7 @@ class AtomsCommon extends StatelessWidget {
   Widget textTitle(String text) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontWeight: FontWeight.bold,
         fontFamily: 'Roboto',
         fontSize: 25,
@@ -30,11 +30,10 @@ class AtomsCommon extends StatelessWidget {
   Widget textRegular(String text) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontFamily: 'PTSans',
         fontSize: 18.0,
       ),
     );
   }
-  
 }
