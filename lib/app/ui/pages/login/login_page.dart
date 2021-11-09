@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_meedu/router.dart' as router;
+import 'package:movil181/app/ui/common/organisms/organism_comon_login.dart';
 import 'package:movil181/app/ui/routes/routes.dart';
 
 class LoginPage extends StatelessWidget {
@@ -8,18 +8,11 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () => router.pushNamed(Routes.REGISTER),
-              child: const Text("sign up"),
-            )
-          ],
-        ),
+      body: ListView(
+        children: [
+          OrganismCommonLogin().bodyLogin(),
+        ],
       ),
-    ));
+    );
   }
 }

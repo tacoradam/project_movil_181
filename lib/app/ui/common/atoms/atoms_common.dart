@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:movil181/app/ui/routes/routes.dart';
 import 'package:flutter_meedu/router.dart' as router;
 
-
 class AtomsCommon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,23 +9,23 @@ class AtomsCommon extends StatelessWidget {
   }
 
   final _icons = <String, IconData>{
-  'accessibility' : Icons.accessibility,
-  'acountCircle'  : Icons.account_circle,
-  'alternateEmail': Icons.alternate_email,
-  'email'         : Icons.email,
-  'lockOpen'      : Icons.lock_open,
-  'lock'          : Icons.lock,
-  'visibility'    : Icons.visibility,
-  'visibilityOff' : Icons.visibility_off,
-  //'add_alert'     : Icons.add_alert,
-  //'folder_open'   : Icons.folder_open,
-  //'donut_large'   : Icons.donut_large,
-  //'inputs'        : Icons.input,
-  //'tune'          : Icons.tune,
+    'accessibility': Icons.accessibility,
+    'acountCircle': Icons.account_circle,
+    'alternateEmail': Icons.alternate_email,
+    'email': Icons.email,
+    'lockOpen': Icons.lock_open,
+    'lock': Icons.lock,
+    'visibility': Icons.visibility,
+    'visibilityOff': Icons.visibility_off,
+    //'add_alert'     : Icons.add_alert,
+    //'folder_open'   : Icons.folder_open,
+    //'donut_large'   : Icons.donut_large,
+    //'inputs'        : Icons.input,
+    //'tune'          : Icons.tune,
   };
 
   Icon getIcon(String nombreIcono) {
-  return Icon(_icons[nombreIcono]);
+    return Icon(_icons[nombreIcono]);
   }
 
   Widget circleAvatar() {
@@ -37,7 +36,7 @@ class AtomsCommon extends StatelessWidget {
     );
   }
 
-  Widget logo(){
+  Widget logo() {
     return Center(
       child: FadeInImage(
         placeholder: AssetImage('assets/jar-loading.gif'),
@@ -69,7 +68,8 @@ class AtomsCommon extends StatelessWidget {
     );
   }
 
-  Widget textFieldRegistro(bool autofocus, bool obscure, String hintText, String labelText,String sufixIcon, String icon) {
+  Widget textFieldRegistro(bool autofocus, bool obscure, String hintText,
+      String labelText, String sufixIcon, String icon) {
     return TextField(
       keyboardType: TextInputType.emailAddress,
       autofocus: autofocus,
@@ -85,19 +85,18 @@ class AtomsCommon extends StatelessWidget {
     );
   }
 
-  Widget buttomSend(String texto, String page){
+  Widget buttomSend(String texto, String page) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 50),
       child: ElevatedButton(
         onPressed: () => router.pushNamed(page),
         child: Text(texto),
         style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-          textStyle: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold)
-        ),
+            elevation: 10.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0)),
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       ),
     );
   }
