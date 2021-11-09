@@ -11,34 +11,48 @@ class MoleculesCommon extends StatelessWidget {
     return Container();
   }
 
-  Widget form(){
+  Widget form() {
     return Form(
-      
-      child: Column(
-        children: <Widget>[
-          AtomsCommon().textFieldRegistro(true, false, 'Email', 'Email', 'email', 'alternateEmail'),
-          Divider(),
-          AtomsCommon().textFieldRegistro(false, false, 'Nombre de la persona', 'Nombre', 'accessibility', 'acountCircle'),
-          Divider(),
-          AtomsCommon().textFieldRegistro(false, true, 'Contraseña', 'Contraseña', 'visibilityOff', 'lock'),
-          Divider(),
-          AtomsCommon().textFieldRegistro(false, true, 'Confirmar contraseña', 'Confirmar contraseña', 'visibility', 'lock'),
-          Divider(),
-          AtomsCommon().buttomSend('Registrar', Routes.HOME),
-          Divider(),
-          AtomsCommon().buttomSend('Ir a Home Temp', Routes.HOME),
-        ],
-      )
-    );
+        child: Column(
+      children: <Widget>[
+        AtomsCommon().textFieldRegistro(
+            true, false, 'Email', 'Email', 'email', 'alternateEmail'),
+        SizedBox(height: 20),
+        AtomsCommon().textFieldRegistro(false, false, 'Nombre de la persona',
+            'Nombre', 'accessibility', 'acountCircle'),
+        SizedBox(height: 20),
+        AtomsCommon().textFieldRegistro(
+            false, true, 'Contraseña', 'Contraseña', 'visibilityOff', 'lock'),
+        SizedBox(height: 20),
+        AtomsCommon().textFieldRegistro(false, true, 'Confirmar contraseña',
+            'Confirmar contraseña', 'visibility', 'lock'),
+        SizedBox(height: 20),
+        AtomsCommon().buttomSend('Registrar', Routes.HOME),
+        SizedBox(height: 20),
+        AtomsCommon().buttomSend('Ir a Home Temp', Routes.HOME),
+      ],
+    ));
   }
 
-  Widget headerRegister(){
+  Widget headerRegister() {
     return Column(
       children: <Widget>[
         AtomsCommon().logo(),
         SizedBox(height: 30),
-        AtomsCommon().textTitle('Registro'),
-      ],  
+        AtomsCommon().textTitleRegister('Registro'),
+      ],
+    );
+  }
+
+  PreferredSizeWidget appBarGeneral(String title) {
+    return AppBar(
+      elevation: 0.0,
+      title: AtomsCommon().textSubtitle(title),
+      actions: <Widget>[
+        //AtomsCommon().buttomAppbBar('notifications'),
+        AtomsCommon().buttomAppbBar('favorite'),
+        AtomsCommon().buttomAppbBar('notifications'),
+      ],
     );
   }
 }

@@ -10,15 +10,15 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: ListView(
-            children: [
-              OrganismsCommon().bodyRegister(),
-            ],
-          ),
-        );
-        
-        /*ListView(
+      //appBar: AppBar(),
+      body: ListView(
+        children: [
+          OrganismsCommon().bodyRegister(),
+        ],
+      ),
+    );
+
+    /*ListView(
           padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
           children: <Widget>[
             Center(
