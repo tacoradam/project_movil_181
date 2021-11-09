@@ -10,8 +10,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.teal,
-      ),
+          //primarySwatch: Colors.,
+          primarySwatch: Colors.teal,
+          appBarTheme: AppBarTheme(
+            color: Colors.white,
+            iconTheme: IconThemeData(color: Colors.teal),
+          )
+          //bottomAppBarColor: Colors.teal,
+          ),
       title: 'APP movil 181',
       navigatorKey: router.navigatorKey,
       debugShowCheckedModeBanner: false,
