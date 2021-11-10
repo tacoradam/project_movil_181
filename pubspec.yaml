@@ -41,6 +41,7 @@ dependencies:
   flutter_meedu: ^5.2.0+1
   footer: ^0.0.3
   floating_bottom_navigation_bar: ^1.5.2
+  card_swiper: ^1.0.4
 
 dev_dependencies:
   flutter_test:

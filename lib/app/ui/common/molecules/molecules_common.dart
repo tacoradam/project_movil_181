@@ -75,4 +75,20 @@ class MoleculesCommon extends StatelessWidget {
       ],
     );
   }
+
+  Widget promo(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: AtomsCommon().textTitle('Promociones'),
+          ),
+          SizedBox(height: 10),
+          AtomsCommon().swiperCards(context),
+        ],
+      ),
+    );
+  }
 }

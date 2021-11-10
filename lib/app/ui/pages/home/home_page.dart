@@ -11,6 +11,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MoleculesCommon().appBarGeneral('Hola, David Bello'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            SizedBox(height: 10),
+            MoleculesCommon().promo(context),
+          ],
+        ),
+      ),
       extendBody: true,
       bottomNavigationBar: MoleculesCommon().bottomNavigation(),
     );
