@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:movil181/app/ui/routes/routes.dart';
 import 'package:flutter_meedu/router.dart' as router;
 
@@ -62,11 +63,11 @@ class AtomsCommon extends StatelessWidget {
   Widget textTitle(String text) {
     return Text(
       text,
-      textAlign: TextAlign.start,
+      textAlign: TextAlign.left,
       style: TextStyle(
-        //fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.bold,
         fontFamily: 'Monserrat',
-        fontSize: 22,
+        fontSize: 24,
         color: Colors.teal[800],
       ),
     );
@@ -133,5 +134,32 @@ class AtomsCommon extends StatelessWidget {
       onPressed: () {},
       icon: getIcon(icon),
     ));
+  }
+
+  Widget swiperCards(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Container(
+      width: double.infinity,
+      height: size.height * 0.20,
+      //color: Colors.purple[200],
+      child: Swiper(
+          itemCount: 10,
+          layout: SwiperLayout.STACK,
+          itemWidth: size.width * 0.8,
+          itemHeight: size.height * 0.2,
+          itemBuilder: (BuildContext context, int index) {
+            return GestureDetector(
+              onTap: () => Navigator.pushNamed(context, 'promo',
+                  arguments: 'promo-instance'),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: FadeInImage(
+                    placeholder: AssetImage('assets/loading.gif'),
+                    image: NetworkImage('https://via.placeholder.com/400x250'),
+                    fit: BoxFit.cover),
+              ),
+            );
+          }),
+    );
   }
 }
