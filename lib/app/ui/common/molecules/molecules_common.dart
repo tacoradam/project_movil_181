@@ -5,8 +5,6 @@ import 'package:flutter_meedu/router.dart' as router;
 import 'package:movil181/app/ui/routes/routes.dart';
 
 class MoleculesCommon extends StatelessWidget {
-  const MoleculesCommon({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container();
@@ -89,6 +87,84 @@ class MoleculesCommon extends StatelessWidget {
           AtomsCommon().swiperCards(context),
         ],
       ),
+    );
+  }
+}
+
+class ListaImgCategories extends StatefulWidget {
+  @override
+  _ListaImgCategoriesState createState() => _ListaImgCategoriesState();
+}
+
+class _ListaImgCategoriesState extends State<ListaImgCategories> {
+  List<String> _listProductos = [
+    '2.png',
+    '1.png',
+    '3.png',
+    '4.png',
+    '5.png',
+    '6.png',
+    '7.png',
+    '8.png',
+    '9.png',
+    '10.png',
+    '11.png'
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: _createList(),
+    );
+  }
+
+  Widget _createList() {
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: _listProductos.length,
+      itemBuilder: (BuildContext context, int index) {
+        final imag = _listProductos[index];
+        return AtomsCommon().imagenSliderCategories(context, imag);
+      },
+    );
+  }
+}
+
+class ListaImagenesServicios extends StatefulWidget {
+  @override
+  _ListaImagenesServiciosState createState() => _ListaImagenesServiciosState();
+}
+
+class _ListaImagenesServiciosState extends State<ListaImagenesServicios> {
+  List<String> _listServicios = [
+    '12.png',
+    '13.png',
+    '14.png',
+    '15.png',
+    '16.png',
+    '17.png',
+    '18.png',
+    '19.png',
+    '20.png',
+    '21.png',
+    '22.png'
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: _createList(),
+    );
+  }
+
+  Widget _createList() {
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: _listServicios.length,
+      itemBuilder: (BuildContext context, int index) {
+        final imag = _listServicios[index];
+        return AtomsCommon().imagenSliderCategories(context, imag);
+      },
     );
   }
 }
