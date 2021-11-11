@@ -140,13 +140,13 @@ class AtomsCommon extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      height: size.height * 0.20,
+      height: size.height * 0.23,
       //color: Colors.purple[200],
       child: Swiper(
           itemCount: 10,
           layout: SwiperLayout.STACK,
           itemWidth: size.width * 0.8,
-          itemHeight: size.height * 0.2,
+          itemHeight: size.height * 0.23,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () => Navigator.pushNamed(context, 'promo',
@@ -160,6 +160,29 @@ class AtomsCommon extends StatelessWidget {
               ),
             );
           }),
+    );
+  }
+
+  Widget imagenSliderCategories(BuildContext context, String image) {
+    return Container(
+      width: 150,
+      height: 170,
+      //color: Colors.green,
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, Routes.CATEGORIAS,
+                arguments: 'categoria-instance'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: FadeInImage(
+                  placeholder: AssetImage('assets/no-image.png'),
+                  image: AssetImage('assets/categories/$image')),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movil181/app/ui/common/atoms/atoms_common.dart';
 import 'package:movil181/app/ui/common/molecules/molecules_common.dart';
 import 'package:movil181/app/ui/common/organisms/organisms_common.dart';
-import 'package:flutter_meedu/router.dart' as router;
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class CategoriesPage extends StatelessWidget {
+  const CategoriesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +12,6 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 10),
-            MoleculesCommon().promo(context),
             SizedBox(height: 10),
             OrganismsCommon().categoriesSlider(context, 'Productos', 1),
             OrganismsCommon().categoriesSlider(context, 'Servicios', 2),
