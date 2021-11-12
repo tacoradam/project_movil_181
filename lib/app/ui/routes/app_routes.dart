@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart' show BuildContext, Container, Widget;
-import 'package:movil181/app/ui/pages/categories_page.dart';
+import 'package:movil181/app/ui/pages/categories/categories_page.dart';
 import 'package:movil181/app/ui/pages/home/home_page.dart';
 import 'package:movil181/app/ui/pages/login/login_page.dart';
 import 'package:movil181/app/ui/pages/register/register_page.dart';

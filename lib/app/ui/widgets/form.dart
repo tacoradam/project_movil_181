@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AtomsCommonTextfiled extends StatefulWidget {
+class FormRegister extends StatefulWidget {
   final void Function(String)? onChanged;
   final String label;
   final bool isPassword;
@@ -8,21 +8,21 @@ class AtomsCommonTextfiled extends StatefulWidget {
   final String? Function(String?)? validator;
   final IconData? icon2;
 
-  const AtomsCommonTextfiled({
-    Key? key,
-    this.onChanged,
-    required this.label,
-    this.isPassword = false,
-    this.icon,
-    this.validator,
-    this.icon2,
-  }) : super(key: key);
+  FormRegister(
+      {Key? key,
+      this.onChanged,
+      required this.label,
+      this.isPassword = false,
+      this.icon,
+      this.validator,
+      this.icon2})
+      : super(key: key);
 
   @override
-  _AtomsCommonTextfiledState createState() => _AtomsCommonTextfiledState();
+  _FormRegisterState createState() => _FormRegisterState();
 }
 
-class _AtomsCommonTextfiledState extends State<AtomsCommonTextfiled> {
+class _FormRegisterState extends State<FormRegister> {
   late bool _obscureText;
 
   @override
