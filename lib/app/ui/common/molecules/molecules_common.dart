@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
+import 'package:flutter_meedu/state.dart';
 import 'package:movil181/app/ui/common/atoms/atoms_common.dart';
 import 'package:flutter_meedu/router.dart' as router;
+import 'package:movil181/app/ui/common/atoms/atoms_common_textfield.dart';
+import 'package:movil181/app/ui/pages/register/controller/register_controller.dart';
+import 'package:movil181/app/ui/pages/register/controller/register_state.dart';
 import 'package:movil181/app/ui/routes/routes.dart';
+import 'package:movil181/app/utils/validator_form.dart';
+import 'package:flutter_meedu/meedu.dart';
+
+final registerProvider = StateProvider<RegisterController, RegisterState>(
+  (_) => RegisterController(),
+);
 
 class MoleculesCommon extends StatelessWidget {
   @override
@@ -11,26 +21,87 @@ class MoleculesCommon extends StatelessWidget {
   }
 
   Widget form() {
-    return Form(
-        child: Column(
-      children: <Widget>[
-        AtomsCommon().textFieldRegistro(
-            false, false, 'Email', 'Email', 'email', 'alternateEmail'),
-        SizedBox(height: 20),
-        AtomsCommon().textFieldRegistro(false, false, 'Nombre de la persona',
-            'Nombre', 'accessibility', 'acountCircle'),
-        SizedBox(height: 20),
-        AtomsCommon().textFieldRegistro(
-            false, true, 'Contraseña', 'Contraseña', 'visibilityOff', 'lock'),
-        SizedBox(height: 20),
-        AtomsCommon().textFieldRegistro(false, true, 'Confirmar contraseña',
-            'Confirmar contraseña', 'visibility', 'lock'),
-        SizedBox(height: 20),
-        AtomsCommon().buttomSend('Registrar', Routes.HOME),
-        SizedBox(height: 20),
-        AtomsCommon().buttomSend('Ir a Home Temp', Routes.HOME),
-      ],
-    ));
+    return ProviderListener<RegisterController>(
+      provider: registerProvider,
+      builder: (_, controller) {
+        return Form(
+            child: Column(
+          children: <Widget>[
+            AtomsCommonTextfiled(
+              label: 'Email',
+              onChanged: controller.onEmailChanged,
+              isPassword: false,
+              icon: Icon(Icons.alternate_email),
+              icon2: Icons.email,
+              validator: (text) {
+                print("text $text");
+                if (text == null) return null;
+
+                return ValidatorForm().isValidEmail(text)
+                    ? null
+                    : "Correo invalido";
+              },
+            ),
+            SizedBox(height: 20),
+            AtomsCommonTextfiled(
+              label: 'Nombre',
+              onChanged: controller.onNameChanged,
+              isPassword: false,
+              icon: Icon(Icons.accessibility),
+              icon2: Icons.account_circle,
+              validator: (text) {
+                if (text == null) return null;
+                return ValidatorForm().isValidName(text)
+                    ? null
+                    : "Nombre invalido";
+              },
+            ),
+            SizedBox(height: 20),
+            AtomsCommonTextfiled(
+              label: 'Contraseña',
+              onChanged: controller.onPasswordChanged,
+              isPassword: true,
+              icon: Icon(Icons.lock),
+              validator: (text) {
+                if (text == null) return null;
+                if (text.trim().length >= 8) {
+                  return null;
+                }
+                return "invalid password";
+              },
+            ),
+            SizedBox(height: 20),
+            Consumer(
+              builder: (_, ref, __) {
+                final controller =
+                    ref.watch(registerProvider.select((_) => _.password));
+                return AtomsCommonTextfiled(
+                  label: 'Confirmar contraseña',
+                  onChanged: controller.onVPasswordChanged,
+                  isPassword: true,
+                  icon: Icon(Icons.lock),
+                  validator: (text) {
+                    if (text == null) return null;
+
+                    if (controller.state.password != text) {
+                      return "Las contraseñas no coinciden";
+                    }
+                    if (text.trim().length >= 8) {
+                      return null;
+                    }
+                    return "invalid password";
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20),
+            AtomsCommon().buttomSend('Registrar', Routes.HOME),
+            SizedBox(height: 20),
+            AtomsCommon().buttomSend('Ir a Home Temp', Routes.HOME),
+          ],
+        ));
+      },
+    );
   }
 
   Widget headerRegister() {

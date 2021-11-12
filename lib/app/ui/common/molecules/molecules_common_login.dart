@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movil181/app/ui/common/atoms/atoms_common.dart';
 import 'package:movil181/app/ui/common/atoms/atoms_common_login.dart';
+import 'package:movil181/app/ui/common/atoms/atoms_common_textfield.dart';
 import 'package:movil181/app/ui/routes/routes.dart';
+import 'package:movil181/app/utils/validator_form.dart';
 
 class MoleculesCommonLogin extends StatelessWidget {
   const MoleculesCommonLogin({Key? key}) : super(key: key);
@@ -25,11 +27,26 @@ class MoleculesCommonLogin extends StatelessWidget {
     return Form(
       child: Column(
         children: <Widget>[
-          AtomsCommon().textFieldRegistro(
-              false, false, 'Email', 'Email', 'email', 'alternateEmail'),
+          AtomsCommonTextfiled(
+            label: 'Email',
+            onChanged: (text) {},
+            isPassword: false,
+            icon: Icon(Icons.alternate_email),
+            icon2: Icons.email,
+            validator: (text) {
+              if (text == null) return null;
+              return ValidatorForm().isValidEmail(text)
+                  ? null
+                  : "Correo invalido";
+            },
+          ),
           SizedBox(height: 12),
-          AtomsCommon().textFieldRegistro(
-              false, true, 'Contraseña', 'Contraseña', 'visibilityOff', 'lock'),
+          AtomsCommonTextfiled(
+            label: 'Contraseña',
+            onChanged: (text) {},
+            isPassword: true,
+            icon: Icon(Icons.lock),
+          ),
           SizedBox(height: 25),
           AtomsCommon().buttomSend('Confirmar', Routes.REGISTER),
         ],
