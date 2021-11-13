@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_meedu/flutter_meedu.dart';
+import 'package:movil181/app/domain/repositories/authentication_repository.dart';
+import 'package:flutter_meedu/router.dart' as router;
+import 'package:movil181/app/ui/routes/routes.dart';
 
 class AppBarGeneral extends StatelessWidget {
   const AppBarGeneral({Key? key}) : super(key: key);
@@ -30,8 +34,11 @@ class AppBarGeneral extends StatelessWidget {
         )),
         Container(
             child: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.notifications),
+          onPressed: () async {
+            await Get.i.find<AuthenticationRepository>().signOut();
+            router.pushNamedAndRemoveUntil(Routes.LOGIN);
+          },
+          icon: Icon(Icons.exit_to_app),
         )),
       ],
     );

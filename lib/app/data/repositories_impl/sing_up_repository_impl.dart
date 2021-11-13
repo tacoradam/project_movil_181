@@ -13,7 +13,7 @@ class SingUpRepositoryImpl implements SignUpRepository {
       final userCredential = await _auth.createUserWithEmailAndPassword(
           email: data.email, password: data.password);
       await userCredential.user!.updateDisplayName(
-        "${data.name} ${data.lastname}",
+        "${data.name}",
       );
       return SingUpResponse(null, userCredential.user!);
     } on FirebaseAuthException catch (e) {
