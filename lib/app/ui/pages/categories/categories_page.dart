@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:movil181/app/data/data_source/remote/stores_service.dart';
 import 'package:movil181/app/ui/widgets/app_bar.dart';
 import 'package:movil181/app/ui/widgets/button_navigation.dart';
-import 'package:movil181/app/ui/widgets/categories_slider.dart';
+import 'package:movil181/app/ui/widgets/tiendas_slider.dart';
+import 'package:provider/provider.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final storesService = Provider.of<StoresService>(context);
     var buttonNavigation = ButtonNavigation;
     return Scaffold(
       appBar: AppBarGeneral().appBarG(),
@@ -15,8 +18,8 @@ class CategoriesPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(height: 10),
-            SwiperCards().categoriesSlider(context, 'Productos', 1),
-            SwiperCards().categoriesSlider(context, 'Servicios', 2),
+            TiendasSlider('tituloCategoria',
+                listTiendas: storesService.listaTiendas)
           ],
         ),
       ),

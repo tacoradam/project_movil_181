@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:movil181/app/ui/widgets/app_bar.dart';
-import 'package:movil181/app/ui/widgets/button_navigation.dart';
-import 'package:movil181/app/ui/widgets/categories_slider.dart';
-import 'package:movil181/app/ui/widgets/swiper_cards.dart';
+import 'package:movil181/app/data/data_source/remote/categories_service.dart';
+import 'package:movil181/app/ui/pages/loading_screen/loading_screen.dart';
+import 'package:movil181/app/ui/widgets/widgets.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final categoriesService = Provider.of<CategoriesService>(context);
+    //print(categoriesService.listaCategorias);
+    if (categoriesService.isLoading) return LoadingScreen();
+
     return Scaffold(
       appBar: AppBarGeneral().appBarG(),
       body: SingleChildScrollView(
@@ -37,9 +41,9 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10),
-            SwiperCards().categoriesSlider(context, 'Productos', 1),
-            SwiperCards().categoriesSlider(context, 'Servicios', 2),
+            SizedBox(height: 15),
+            CategoriasSlider('Productos', listCat: categoriesService.productos),
+            CategoriasSlider('Servicios', listCat: categoriesService.servicios),
           ],
         ),
       ),
