@@ -9,6 +9,6 @@ void main() async {
   await Firebase.initializeApp();
   injectDependencies();
   runApp(
-    const MyApp(),
+    AppState(),
   );
 }
