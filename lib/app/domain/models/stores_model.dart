@@ -4,28 +4,28 @@
 
 import 'dart:convert';
 
+// class Stores {
+//   Stores({
+//     required this.nittienda,
+//   });
+
+//   Nittienda nittienda;
+
+//   factory Stores.fromJson(String str) => Stores.fromMap(json.decode(str));
+
+//   String toJson() => json.encode(toMap());
+
+//   factory Stores.fromMap(Map<String, dynamic> json) => Stores(
+//         nittienda: Nittienda.fromMap(json["nittienda"]),
+//       );
+
+//   Map<String, dynamic> toMap() => {
+//         "nittienda": nittienda.toMap(),
+//       };
+// }
+
 class Stores {
   Stores({
-    required this.nittienda,
-  });
-
-  Nittienda nittienda;
-
-  factory Stores.fromJson(String str) => Stores.fromMap(json.decode(str));
-
-  String toJson() => json.encode(toMap());
-
-  factory Stores.fromMap(Map<String, dynamic> json) => Stores(
-        nittienda: Nittienda.fromMap(json["nittienda"]),
-      );
-
-  Map<String, dynamic> toMap() => {
-        "nittienda": nittienda.toMap(),
-      };
-}
-
-class Nittienda {
-  Nittienda({
     required this.descripcion,
     required this.direccion,
     required this.imagen,
@@ -33,7 +33,7 @@ class Nittienda {
     required this.productos,
     required this.telefono,
     required this.tipo,
-    required this.nit,
+    this.nit,
   });
 
   String descripcion;
@@ -43,13 +43,13 @@ class Nittienda {
   Productos productos;
   int telefono;
   String tipo;
-  String nit;
+  String? nit;
 
-  factory Nittienda.fromJson(String str) => Nittienda.fromMap(json.decode(str));
+  factory Stores.fromJson(String str) => Stores.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory Nittienda.fromMap(Map<String, dynamic> json) => Nittienda(
+  factory Stores.fromMap(Map<String, dynamic> json) => Stores(
         descripcion: json["descripcion"],
         direccion: json["direccion"],
         imagen: json["imagen"],
@@ -57,7 +57,6 @@ class Nittienda {
         productos: Productos.fromMap(json["productos"]),
         telefono: json["telefono"],
         tipo: json["tipo"],
-        nit: json["nittienda"],
       );
 
   Map<String, dynamic> toMap() => {

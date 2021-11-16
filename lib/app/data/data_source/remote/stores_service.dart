@@ -12,8 +12,8 @@ class StoresService extends ChangeNotifier {
   StoresService() {
     this.loadStores();
   }
-
-  Future<List<Stores>> loadStores() async {
+  // <List<Stores>>
+  Future loadStores() async {
     final url = Uri.https(_baseUrl, '/store.json');
     final resp = await http.get(url);
     final Map<String, dynamic> storesMap = json.decode(resp.body);
@@ -21,7 +21,7 @@ class StoresService extends ChangeNotifier {
 
     storesMap.forEach((key, value) {
       final tempStore = Stores.fromMap(value);
-      tempStore.nittienda.nit = key;
+      tempStore.nit = key;
       this.listaTiendas.add(tempStore);
     });
     print(listaTiendas);

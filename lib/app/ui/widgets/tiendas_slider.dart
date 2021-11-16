@@ -4,7 +4,6 @@ import 'package:movil181/app/ui/routes/routes.dart';
 
 class TiendasSlider extends StatelessWidget {
   final List<Stores> listTiendas;
-
   final String tituloCategoria;
 
   const TiendasSlider(this.tituloCategoria,
@@ -17,12 +16,12 @@ class TiendasSlider extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: size.height * 0.7,
-      color: Colors.blueAccent,
+      //color: Colors.blueAccent,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               child: Text(
                 tituloCategoria,
                 style: TextStyle(
@@ -39,8 +38,7 @@ class TiendasSlider extends StatelessWidget {
                 itemCount: listTiendas.length,
                 itemBuilder: (BuildContext context, int index) {
                   final tienda = listTiendas[index];
-                  return _ImagenSlider(
-                      tienda.nittienda.imagen, tienda.nittienda.nombre);
+                  return _ImagenSlider(tienda.imagen, tienda.nombre);
                 }),
           ),
         ],
@@ -60,26 +58,34 @@ class _ImagenSlider extends StatelessWidget {
     return Container(
       //width: 140,
       height: 200,
-      color: Colors.green,
-      margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      //color: Colors.green,
+      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Row(
-        children: <Widget>[_ImagenT(url, title)],
+        children: <Widget>[
+          _ImagenT(
+            urlImagen: url,
+            nombreTienda: title,
+          ),
+          _ImagenT(
+            urlImagen: url,
+            nombreTienda: title,
+          )
+        ],
       ),
     );
   }
 }
 
 class _ImagenT extends StatelessWidget {
-  final String? urlImagen;
+  final String urlImagen;
   final String? nombreTienda;
-  const _ImagenT(String url, String? title,
-      {Key? key, this.urlImagen, this.nombreTienda})
+  const _ImagenT({Key? key, required this.urlImagen, this.nombreTienda})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: Column(
           children: [
             GestureDetector(
@@ -88,8 +94,10 @@ class _ImagenT extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: FadeInImage(
-                    placeholder: AssetImage('assets/no-image.png'),
-                    image: NetworkImage(urlImagen!)),
+                  placeholder: AssetImage('assets/no-image.png'),
+                  image: NetworkImage(urlImagen),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             SizedBox(height: 5),
