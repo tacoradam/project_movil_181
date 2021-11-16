@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movil181/app/data/data_source/remote/stores_service.dart';
+import 'package:movil181/app/data/data_source/remote/services.dart';
 import 'package:movil181/app/ui/widgets/app_bar.dart';
 import 'package:movil181/app/ui/widgets/button_navigation.dart';
 import 'package:movil181/app/ui/widgets/tiendas_slider.dart';
