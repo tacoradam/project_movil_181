@@ -40,7 +40,7 @@ class TiendasSlider extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   final tienda = listTiendas[index];
                   return _ImagenSlider(
-                      tienda.nitTienda.imagen, tienda.nitTienda.nombre);
+                      tienda.nittienda.imagen, tienda.nittienda.nombre);
                 }),
           ),
         ],

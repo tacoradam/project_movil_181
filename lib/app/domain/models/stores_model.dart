@@ -6,27 +6,26 @@ import 'dart:convert';
 
 class Stores {
   Stores({
-    required this.nitTienda,
+    required this.nittienda,
   });
 
-  NitTienda nitTienda;
+  Nittienda nittienda;
 
   factory Stores.fromJson(String str) => Stores.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
   factory Stores.fromMap(Map<String, dynamic> json) => Stores(
-        nitTienda: NitTienda.fromMap(json["nit_tienda"]),
+        nittienda: Nittienda.fromMap(json["nittienda"]),
       );
 
   Map<String, dynamic> toMap() => {
-        "nit_tienda": nitTienda.toMap(),
+        "nittienda": nittienda.toMap(),
       };
 }
 
-class NitTienda {
-  NitTienda({
-    required this.categoria,
+class Nittienda {
+  Nittienda({
     required this.descripcion,
     required this.direccion,
     required this.imagen,
@@ -34,23 +33,23 @@ class NitTienda {
     required this.productos,
     required this.telefono,
     required this.tipo,
+    required this.nit,
   });
 
-  String categoria;
   String descripcion;
   String direccion;
   String imagen;
   String nombre;
   Productos productos;
   int telefono;
-  bool tipo;
+  String tipo;
+  String nit;
 
-  factory NitTienda.fromJson(String str) => NitTienda.fromMap(json.decode(str));
+  factory Nittienda.fromJson(String str) => Nittienda.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory NitTienda.fromMap(Map<String, dynamic> json) => NitTienda(
-        categoria: json["categoria"],
+  factory Nittienda.fromMap(Map<String, dynamic> json) => Nittienda(
         descripcion: json["descripcion"],
         direccion: json["direccion"],
         imagen: json["imagen"],
@@ -58,10 +57,10 @@ class NitTienda {
         productos: Productos.fromMap(json["productos"]),
         telefono: json["telefono"],
         tipo: json["tipo"],
+        nit: json["nittienda"],
       );
 
   Map<String, dynamic> toMap() => {
-        "categoria": categoria,
         "descripcion": descripcion,
         "direccion": direccion,
         "imagen": imagen,
@@ -74,56 +73,36 @@ class NitTienda {
 
 class Productos {
   Productos({
-    required this.ref,
+    required this.descripcion,
+    required this.disponibilidad,
+    required this.imagen,
+    required this.precio,
+    required this.referencia,
   });
 
-  Ref ref;
+  String descripcion;
+  bool disponibilidad;
+  String imagen;
+  int precio;
+  String referencia;
 
   factory Productos.fromJson(String str) => Productos.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
   factory Productos.fromMap(Map<String, dynamic> json) => Productos(
-        ref: Ref.fromMap(json["ref"]),
-      );
-
-  Map<String, dynamic> toMap() => {
-        "ref": ref.toMap(),
-      };
-}
-
-class Ref {
-  Ref({
-    required this.descripcion,
-    required this.disponible,
-    required this.imagen,
-    required this.nombre,
-    required this.precio,
-  });
-
-  String descripcion;
-  bool disponible;
-  String imagen;
-  String nombre;
-  int precio;
-
-  factory Ref.fromJson(String str) => Ref.fromMap(json.decode(str));
-
-  String toJson() => json.encode(toMap());
-
-  factory Ref.fromMap(Map<String, dynamic> json) => Ref(
         descripcion: json["descripcion"],
-        disponible: json["disponible"],
+        disponibilidad: json["disponibilidad"],
         imagen: json["imagen"],
-        nombre: json["nombre"],
-        precio: json["precio"],
+        precio: json["precio"].toInt(),
+        referencia: json["referencia"],
       );
 
   Map<String, dynamic> toMap() => {
         "descripcion": descripcion,
-        "disponible": disponible,
+        "disponibilidad": disponibilidad,
         "imagen": imagen,
-        "nombre": nombre,
         "precio": precio,
+        "referencia": referencia,
       };
 }
