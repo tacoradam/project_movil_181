@@ -2,8 +2,8 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 
 class ButtonNavigation extends StatelessWidget {
-  const ButtonNavigation({Key? key}) : super(key: key);
-
+  const ButtonNavigation({Key? key, required this.index}) : super(key: key);
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container();
@@ -17,7 +17,7 @@ class ButtonNavigation extends StatelessWidget {
       onTap: (int val) {
         //returns tab id which is user tapped
       },
-      currentIndex: 0,
+      currentIndex: index,
       items: [
         FloatingNavbarItem(icon: Icons.home, title: 'Inicio'),
         FloatingNavbarItem(icon: Icons.search, title: 'Buscar'),

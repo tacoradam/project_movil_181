@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       extendBody: true,
-      bottomNavigationBar: ButtonNavigation().bottomNavigation(),
+      bottomNavigationBar: ButtonNavigation(index: 0).bottomNavigation(),
     );
   }
 }

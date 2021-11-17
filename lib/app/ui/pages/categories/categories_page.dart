@@ -24,7 +24,7 @@ class CategoriesPage extends StatelessWidget {
         ),
       ),
       extendBody: true,
-      bottomNavigationBar: ButtonNavigation().bottomNavigation(),
+      bottomNavigationBar: ButtonNavigation(index: 1).bottomNavigation(),
     );
   }
 }
