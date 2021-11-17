@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:movil181/app/domain/repositories/authentication_repository.dart';
+import 'package:movil181/app/domain/responses/sing_in_responses.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
   final FirebaseAuth _auth;
@@ -42,7 +43,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       final user = userCredential.user!;
       return SingInResponse(null, user);
     } on FirebaseAuthException catch (e) {
-      return SingInResponse(e.code, null);
+      return SingInResponse(stringToSingInError(e.code), null);
     }
   }
 }

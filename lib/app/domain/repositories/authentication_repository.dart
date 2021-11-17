@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:movil181/app/domain/responses/sing_in_responses.dart';
 
 abstract class AuthenticationRepository {
   Future<User?> get user;
@@ -7,11 +8,4 @@ abstract class AuthenticationRepository {
     String email,
     String password,
   );
-}
-
-class SingInResponse {
-  final String? error;
-  final User? user;
-
-  SingInResponse(this.error, this.user);
 }

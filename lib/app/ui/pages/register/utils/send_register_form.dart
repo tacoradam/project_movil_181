@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_meedu/router.dart' as router;
-import 'package:movil181/app/domain/use_cases/sing_up.dart';
+import 'package:movil181/app/domain/responses/sing_up_responses.dart';
 import 'package:movil181/app/ui/routes/routes.dart';
 import 'package:movil181/app/ui/widgets/dialogs/dialogs.dart';
 import 'package:movil181/app/ui/widgets/dialogs/progress_dialog.dart';
@@ -30,6 +30,9 @@ Future<void> sendRegisterForm(BuildContext context) async {
           break;
         case SingUpError.unKnown:
           content = "No se pudo crear el usuario";
+          break;
+        case SingUpError.networkRequestFailed:
+          content = "No hay conexion a internet";
           break;
       }
 

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:movil181/app/domain/repositories/sing_up_repository.dart';
+import 'package:movil181/app/domain/responses/sing_up_responses.dart';
 import 'package:movil181/app/domain/use_cases/sing_up.dart';
 
 class SingUpRepositoryImpl implements SignUpRepository {

@@ -15,6 +15,6 @@ class ValidatorForm extends StatelessWidget {
   }
 
   bool isValidName(String text) {
-    return RegExp(r"^[a-zA-ZñÑ]+$").hasMatch(text);
+    return RegExp(r"^[a-zA-ZñÑ ]+$").hasMatch(text);
   }
 }

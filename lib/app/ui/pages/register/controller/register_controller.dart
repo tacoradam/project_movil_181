@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_meedu/flutter_meedu.dart';
 import 'package:movil181/app/domain/repositories/sing_up_repository.dart';
+import 'package:movil181/app/domain/responses/sing_up_responses.dart';
 import 'package:movil181/app/domain/use_cases/sing_up.dart';
 import 'package:movil181/app/ui/pages/register/controller/register_state.dart';
 

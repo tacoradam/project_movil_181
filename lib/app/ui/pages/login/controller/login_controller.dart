@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart' show FormState, GlobalKey;
 import 'package:flutter_meedu/flutter_meedu.dart';
 import 'package:movil181/app/domain/repositories/authentication_repository.dart';
+import 'package:movil181/app/domain/responses/sing_in_responses.dart';
 
 class LoginController extends SimpleNotifier {
   String _email = '';
