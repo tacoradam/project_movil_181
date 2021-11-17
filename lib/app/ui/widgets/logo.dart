@@ -9,12 +9,10 @@ class Logo extends StatelessWidget {
   }
 
   Widget logo() {
-    return Center(
-      child: FadeInImage(
-        placeholder: AssetImage('assets/Imagen3.png'),
-        width: 180,
-        image: AssetImage('assets/Imagen3.png'),
-      ),
+    return FadeInImage(
+      placeholder: AssetImage('assets/Imagen3.png'),
+      width: 180,
+      image: AssetImage('assets/Imagen3.png'),
     );
   }
 }

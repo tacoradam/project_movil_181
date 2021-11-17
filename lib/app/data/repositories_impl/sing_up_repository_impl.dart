@@ -17,7 +17,7 @@ class SingUpRepositoryImpl implements SignUpRepository {
       );
       return SingUpResponse(null, userCredential.user!);
     } on FirebaseAuthException catch (e) {
-      return SingUpResponse(e.code, null);
+      return SingUpResponse(parseStringToSingUpError(e.code), null);
     }
   }
 }
