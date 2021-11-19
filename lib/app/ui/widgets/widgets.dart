@@ -7,3 +7,4 @@ export 'package:movil181/app/ui/widgets/list_image_services.dart';
 export 'package:movil181/app/ui/widgets/list_img_categories.dart';
 export 'package:movil181/app/ui/widgets/logo.dart';
 export 'package:movil181/app/ui/widgets/swiper_cards.dart';
+export 'package:movil181/app/ui/widgets/products_cards.dart';

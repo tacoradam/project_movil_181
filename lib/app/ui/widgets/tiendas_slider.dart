@@ -89,8 +89,8 @@ class _ImagenT extends StatelessWidget {
         child: Column(
           children: [
             GestureDetector(
-              onTap: () => Navigator.pushNamed(context, Routes.CATEGORIAS,
-                  arguments: 'categoria-instance'),
+              onTap: () => Navigator.pushNamed(context, Routes.STORE,
+                  /*arguments: 'categoria-instance'*/),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: FadeInImage(
