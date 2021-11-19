@@ -5,6 +5,8 @@ import 'package:movil181/app/ui/pages/login/login_page.dart';
 import 'package:movil181/app/ui/pages/register/register_page.dart';
 import 'package:movil181/app/ui/pages/search/search_page.dart';
 import 'package:movil181/app/ui/pages/splash/splash_page.dart';
+import 'package:movil181/app/ui/pages/store/products_store_page.dart';
+
 import 'package:movil181/app/ui/routes/routes.dart';
 
 Map<String, Widget Function(BuildContext)> get appRoutes => {
@@ -14,4 +16,5 @@ Map<String, Widget Function(BuildContext)> get appRoutes => {
       Routes.HOME: (_) => const HomePage(),
       Routes.CATEGORIAS: (_) => const CategoriesPage(),
       Routes.SEARCH: (_) => const SearchPage(),
+      Routes.STORE: (_) => const ProductsStore(),
     };
